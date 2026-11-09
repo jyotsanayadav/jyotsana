@@ -476,6 +476,49 @@
     nav { gap: .8rem 1rem; }
   }
 
+
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-image {
+  flex: 0 0 40%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 760px) {
+  .hero-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 350px;
+    align-self: center;
+  }
+}
+
+
+
+
+  
+
 </style>
 </head>
 <body>
