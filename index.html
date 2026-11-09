@@ -1,82 +1,306 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jyotsana — Computer Science student, developer, and AI/ML enthusiast." />
-  <title>Jyotsana</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f8f8f5;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            position: sticky;
+            top: 0;
+            background: #f8f8f5;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #777;
+        }
+
+        section {
+            padding: 90px 12%;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero p {
+            color: #777;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 75px);
+            line-height: 1.1;
+            margin: 20px 0;
+        }
+
+        .hero h1 span {
+            color: #999;
+        }
+
+        .hero .intro {
+            max-width: 550px;
+            color: #666;
+            letter-spacing: 0;
+            font-size: 17px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #252525;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            width: fit-content;
+        }
+
+        h2 {
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .about p {
+            max-width: 700px;
+            color: #666;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skills-list span {
+            padding: 10px 20px;
+            background: #ededE8;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #eeeeea;
+            padding: 30px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #222;
+            font-size: 14px;
+        }
+
+        .contact p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #888;
+            font-size: 13px;
+        }
+
+        @media(max-width: 650px) {
+            header {
+                padding: 20px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 12px;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <main>
-    <section class="about section" id="about">
-      <div class="section-heading">
-        <h2>A little about <em>me.</em></h2>
-      </div>
-      <div class="about-grid">
-        <p class="about-lead">I'm a Computer Science student, curious about how technology can make a meaningful difference in people's lives.</p>
-        <div class="about-detail">
-          <p>In the long run, I hope to become a researcher and explore how AI could support human well-being in thoughtful, and genuinely useful ways.</p>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">Portfolio.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <p>HELLO, I'M A DEVELOPER</p>
+
+        <h1>Building ideas<br>
+            into <span>reality.</span>
+        </h1>
+
+        <p class="intro">
+            I'm a Computer Science student passionate about
+            software development, problem solving and
+            exploring the world of technology.
+        </p>
+
+        <a href="#projects" class="btn">Explore My Work →</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me.</h2>
+
+        <p>
+            I'm a Computer Science student interested in
+            building meaningful digital experiences.
+            I enjoy working with Java, web technologies
+            and machine learning. I'm always learning,
+            experimenting and trying to do better.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Skills.</h2>
+
+        <div class="skills-list">
+            <span>Java</span>
+            <span>DSA</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+            <span>Python</span>
+            <span>Machine Learning</span>
         </div>
-      </div>
     </section>
 
-    <section class="skills section" id="skills">
-      <div class="section-heading">
-        <p class="eyebrow">WHAT I'M EXPLORING</p>
-        <h2>Tools in my <em>toolkit.</em></h2>
-      </div>
-      <div class="skill-grid">
-        <article class="skill-card"><span class="skill-number">01</span><div class="skill-icon"></div><h3>Programming</h3><p>Java · Data Structures & Algorithms · Python · C Language</p></article>
-        <article class="skill-card"><span class="skill-number">02</span><div class="skill-icon"></div><h3>Web Development</h3><p>MERN Stack</p></article>
-        <article class="skill-card"><span class="skill-number">03</span><div class="skill-icon"></div><h3>AI/ML</h3><p>Deep learning fundamentals · Model building </p></article>
-      </div>
-    </section>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Selected Projects.</h2>
 
-    <section class="interests section" id="interests">
-      <div class="section-heading">
-        <p class="eyebrow">LIFE OUTSIDE THE CODE</p>
-        <h2>A few things that make me <em>me.</em></h2>
-      </div>
-      <div class="interest-grid">
-        <article class="interest-card faith-card">
-          <span class="interest-mark">✺</span>
-          <p class="interest-kicker">FAITH</p>
-          <p>Devotion to Goddess Durga Maa is an important part of who I am.</p>
-        </article>
-        <article class="interest-card">
-          <span class="interest-mark">✦</span>
-          <p class="interest-kicker">ON THE SCREEN</p>
-          <p>I love movies, especially superhero movies when the characters grow, change, and have more to them than just their powers. </p>
-        </article>
-        <article class="interest-card">
-          <span class="interest-mark">↗</span>
-          <p class="interest-kicker">Sports & movement</p>
-          <p>Any match with competition, and an unpredictable finish has my attention. I love roller skating, and I occasionally play recreational sports.</p>
-        </article>
-        <article class="interest-card">
-          <span class="interest-mark">✍</span>
-          <p class="interest-kicker">Calligraphy</p>
-          <p>Calligraphy is my calming corner—a chance to slow down, focus on each stroke, and enjoy the process.</p>
-        </article>
-      </div>
-    </section>
+        <div class="projects">
 
-    <section class="research section" id="research">
-      <div class="research-card">
-        <div class="research-icon">✳</div>
-        <div>
-          <p class="eyebrow">A FUTURE I'M WORKING TOWARDS</p>
-          <h2>AI with a more <em>human purpose.</em></h2>
-          <p>I hope to pursue research at the intersection of artificial intelligence and human well-being exploring how technology might help us understand and support well-being, while keeping empathy at the centre.</p>
+            <div class="project-card">
+                <h3>Spotify Clone</h3>
+                <p>
+                    A music streaming interface built
+                    using HTML, CSS and JavaScript.
+                </p>
+                <a href="#">View Project →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Wanderlust</h3>
+                <p>
+                    A travel and accommodation platform
+                    with listings, reviews and bookings.
+                </p>
+                <a href="#">View Project →</a>
+            </div>
+
+            <div class="project-card">
+                <h3>AI Voice Detection</h3>
+                <p>
+                    A machine learning project that
+                    identifies AI-generated and human voices.
+                </p>
+                <a href="#">View Project →</a>
+            </div>
+
         </div>
-      </div>
     </section>
-  </main>
 
-  <script src="script.js"></script>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Let's Connect.</h2>
+
+        <p>Have an opportunity or just want to connect?</p>
+
+        <p>Email: yourmail@example.com</p>
+
+        <p>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            &nbsp; | &nbsp;
+            <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+        </p>
+
+        <a href="mailto:yourmail@example.com" class="btn">
+            Get In Touch →
+        </a>
+    </section>
+
+    <footer>
+        © 2026 My Portfolio. All rights reserved.
+    </footer>
+
 </body>
 </html>
